@@ -2,110 +2,194 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ashok Kumar Bandige - Integration Specialist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Single Page Resume</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      padding: 0;
+      display: flex;
       color: #333;
+      background-color: #f9f9f9;
     }
-    .container {
-      max-width: 800px;
-      margin: 40px auto;
-      background: #fff;
-      padding: 40px;
-      border-radius: 8px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+
+    nav {
+      width: 220px;
+      background-color: #2c3e50;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      padding-top: 2rem;
     }
-    .profile {
-      text-align: center;
-    }
-    .profile h1 {
-      margin: 10px 0 5px;
-    }
-    .profile h2 {
-      margin: 0;
-      font-weight: normal;
-      color: #777;
-    }
-    section {
-      margin-top: 30px;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    a {
-      color: #007acc;
+
+    nav a {
+      color: white;
+      padding: 1rem 1.5rem;
       text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #34495e;
+    }
+
+    main {
+      margin-left: 220px;
+      padding: 2rem;
+      width: 100%;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 0 auto 4rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    section h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #2c3e50;
+      border-bottom: 2px solid #eaeaea;
+      padding-bottom: 0.5rem;
+    }
+
+    section p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      color: #2980b9;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        position: relative;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        overflow-x: auto;
+        justify-content: space-around;
+      }
+
+      nav a {
+        padding: 1rem;
+        font-size: 0.9rem;
+      }
+
+      main {
+        margin-left: 0;
+        padding: 1rem;
+      }
+
+      section {
+        padding: 1rem;
+        margin-bottom: 2rem;
+      }
     }
   </style>
 </head>
 <body>
 
-<div class="container">
-  <div class="profile">
-    <h1>Ashok Kumar Bandige</h1>
-    <h2>Enterprise Integration Specialist | SAG webMethods | API Management</h2>
-    <p>📧 <a href="mailto:ashokkumar.bandige@gmail.com">ashokkumar.bandige@gmail.com</a> | 📱 +91-8886556515</p>
-  </div>
+  <nav>
+    <a href="#summary">Summary</a>
+    <a href="#core">Skills</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#experience">Experience</a>
+    <a href="#public">Profiles</a>
+    <a href="#education">Education</a>
+  </nav>
 
-  <section>
-    <h3>Professional Summary</h3>
-    <p>8+ years of experience in enterprise integration using Software AG webMethods stack. Hands-on expertise in REST/Web Services, API Gateway, OAuth, JWT, B2B (EDI), and BPM flows. Proven record of delivering robust EAI and B2B integrations across Retail, Supply Chain, and Banking domains.</p>
-  </section>
+  <main>
+    <section id="summary">
+      <h3>Professional Summary</h3>
+      <p>8+ years of experience in enterprise integration using Software AG webMethods stack. Hands-on expertise in REST/Web Services, API Gateway, OAuth, JWT, B2B (EDI), and BPM flows. Proven record of delivering robust EAI and B2B integrations across Retail, Supply Chain, and Banking domains.</p>
+    </section>
 
-  <section>
-    <h3>Core Skills</h3>
-    <ul>
-      <li>webMethods (8.x to 10.x), API Gateway, Trading Networks</li>
-      <li>REST & SOAP services, OAuth/JWT security, ELK & Splunk logging</li>
-      <li>Java, Flow Language, SQL, JavaScript, HTML, CSS</li>
-      <li>Oracle, MS SQL, MySQL databases</li>
-      <li>CI/CD with Jenkins, Git, Artifactory, Command Central</li>
-    </ul>
-  </section>
+    <section id="core">
+      <h3>Core Skills</h3>
+      <ul>
+        <li>webMethods (8.x to 10.x), API Gateway, Trading Networks</li>
+        <li>REST & SOAP services, OAuth/JWT security, ELK & Splunk logging</li>
+        <li>Java, Flow Language, SQL, JavaScript, HTML, CSS</li>
+        <li>Oracle, MS SQL, MySQL databases</li>
+        <li>CI/CD with Jenkins, Git, Artifactory, Command Central</li>
+      </ul>
+    </section>
 
-  <section>
-    <h3>Certifications & Awards</h3>
-    <ul>
-      <li>webMethods Developer - Infosys</li>
-      <li>Deep Dive into Retail Banking, Cards & Payments</li>
-      <li>Star Award (Infosys) | Top 3 Innovator (Cognizant)</li>
-    </ul>
-  </section>
+    <section id="certifications">
+      <h3>Certifications & Awards</h3>
+      <ul>
+        <li>webMethods Developer - Infosys</li>
+        <li>Deep Dive into Retail Banking, Cards & Payments</li>
+        <li>Star Award (Infosys) | Top 3 Innovator (Cognizant)</li>
+      </ul>
+    </section>
 
-  <section>
-    <h3>Experience Highlights</h3>
-    <ul>
-      <li><strong>Lead Consultant</strong> at ITC Infotech (2018–Present)</li>
-      <li><strong>Associate</strong> at Cognizant (2015–2018)</li>
-      <li><strong>Consultant</strong> at HCL Technologies (2015)</li>
-      <li><strong>Sr. Systems Engineer</strong> at Infosys (2011–2015)</li>
-    </ul>
-  </section>
+    <section id="experience">
+      <h3>Experience Highlights</h3>
+      <ul>
+        <li><strong>Lead Consultant</strong> at ITC Infotech (2018–Present)</li>
+        <li><strong>Associate</strong> at Cognizant (2015–2018)</li>
+        <li><strong>Consultant</strong> at HCL Technologies (2015)</li>
+        <li><strong>Sr. Systems Engineer</strong> at Infosys (2011–2015)</li>
+      </ul>
+    </section>
 
-  <section>
-    <h3>Public Profiles</h3>
-    <ul>
-      <li><a href="https://in.linkedin.com/in/ashokkumarbandige" target="_blank">LinkedIn</a></li>
-      <li><a href="https://www.hackerearth.com/@ashokkumar.bandige" target="_blank">HackerEarth</a></li>
-      <li><a href="https://github.com/crazyash" target="_blank">GitHub</a></li>
-      <li><a href="http://learningneverends.in/" target="_blank">Personal Website</a></li>
-    </ul>
-  </section>
+    <section id="public">
+      <h3>Public Profiles</h3>
+      <ul>
+        <li><a href="https://in.linkedin.com/in/ashokkumarbandige" target="_blank">LinkedIn</a></li>
+        <li><a href="https://www.hackerearth.com/@ashokkumar.bandige" target="_blank">HackerEarth</a></li>
+        <li><a href="https://github.com/crazyash" target="_blank">GitHub</a></li>
+        <li><a href="http://learningneverends.in/" target="_blank">Personal Website</a></li>
+      </ul>
+    </section>
 
-  <section>
-    <h3>Education</h3>
-    <ul>
-      <li>B.Tech in ECE – Sreenidhi Institute of Science & Technology (JNTU)</li>
-      <li>Intermediate – Vikas Junior College (92.4%)</li>
-      <li>SSC – NVHS (84.3%)</li>
-    </ul>
-  </section>
-</div>
+    <section id="education">
+      <h3>Education</h3>
+      <ul>
+        <li>B.Tech in ECE – Sreenidhi Institute of Science & Technology (JNTU)</li>
+        <li>Intermediate – Vikas Junior College (92.4%)</li>
+        <li>SSC – NVHS (84.3%)</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Ashok Kumar Bandige. All rights reserved.</p>
+    </footer>
+  </main>
 
 </body>
 </html>

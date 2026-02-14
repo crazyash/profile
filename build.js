@@ -13,7 +13,7 @@ class StaticSiteBuilder {
 
   async build() {
     try {
-      console.log('🏗️  Starting static site build...');
+      console.log('Starting static site build...');
       
       // Create build directory
       await this.ensureDir(this.buildDir);
@@ -33,12 +33,16 @@ class StaticSiteBuilder {
       // Generate root index.html (for hosting)
       await this.generateRootHTML(profileData);
       
-      console.log('✅ Build completed successfully!');
-      console.log(`📁 Build output: ${this.buildDir}`);
-      console.log(`📄 Root index.html generated for static hosting`);
+      // Copy index.html to public folder for development serving
+      await this.copyToPublicFolder();
+      
+      console.log('Build completed successfully!');
+      console.log(`Build output: ${this.buildDir}`);
+      console.log(`Root index.html generated for static hosting`);
+      console.log(`Index.html copied to public folder for development`);
       
     } catch (error) {
-      console.error('❌ Build failed:', error);
+      console.error('Build failed:', error);
       process.exit(1);
     }
   }
@@ -54,7 +58,7 @@ class StaticSiteBuilder {
 
   async generateCharts(profileData) {
     try {
-      console.log('📊 Generating static charts...');
+      console.log('Generating static charts...');
       
       // Generate donut chart
       const donutChart = await this.chartGenerator.generateTimeAllocationChart(profileData.timeActivities);
@@ -64,7 +68,7 @@ class StaticSiteBuilder {
       const barChart = await this.chartGenerator.generateSimpleBarChart(profileData.timeActivities);
       await fs.writeFile(path.join(this.buildDir, 'time-bar-chart.svg'), barChart);
       
-      console.log('✅ Generated static charts');
+      console.log('Generated static charts');
       
     } catch (error) {
       throw new Error(`Failed to generate charts: ${error.message}`);
@@ -94,7 +98,7 @@ class StaticSiteBuilder {
       const minifiedHTML = this.minifyHTML(html);
       
       await fs.writeFile(path.join(this.buildDir, 'index.html'), minifiedHTML);
-      console.log('✅ Generated build/index.html');
+      console.log('Generated build/index.html');
       
     } catch (error) {
       throw new Error(`Failed to generate HTML: ${error.message}`);
@@ -105,8 +109,9 @@ class StaticSiteBuilder {
     // Create a static version of the template without Chart.js dependencies
     const staticTemplate = await fs.readFile(path.join(this.srcDir, 'views', 'index.ejs'), 'utf8');
     
-    // Only remove Chart.js script and canvas, keep Font Awesome
+    // Remove Chart.js script and canvas, replace with static SVG
     const modifiedTemplate = staticTemplate
+      .replace('<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>', '')
       .replace('<canvas id="timeChart"></canvas>', '<%- chartSvg %>')
       .replace('<script src="/js/app.js"></script>', '<script src="/js/static-app.js"></script>')
       .replace('src="/js/app.js"', 'src="./build/js/static-app.js"');
@@ -140,7 +145,7 @@ class StaticSiteBuilder {
       
       // Write to root directory for static hosting
       await fs.writeFile(path.join(this.srcDir, 'index.html'), minifiedHTML);
-      console.log('✅ Generated root index.html for static hosting');
+      console.log('Generated root index.html for static hosting');
       
     } catch (error) {
       throw new Error(`Failed to generate root HTML: ${error.message}`);
@@ -157,16 +162,8 @@ class StaticSiteBuilder {
       // Only remove Google Fonts and other external imports, keep Font Awesome
       css = css.replace(/@import\s+url\(['"].*googleapis.*['"].*\);?/gi, '');
       
-      // Minify CSS
-      const minifiedCSS = css
-        .replace(/\/\*[\s\S]*?\*\//g, '')
-        .replace(/\s+/g, ' ')
-        .replace(/;\s*}/g, '}')
-        .replace(/{\s*/g, '{')
-        .replace(/;\s*/g, ';')
-        .trim();
-      
-      await fs.writeFile(path.join(this.buildDir, 'css', 'style.css'), minifiedCSS);
+      // For now, skip minification to avoid issues - just write the processed CSS
+      await fs.writeFile(path.join(this.buildDir, 'css', 'style.css'), css);
       
       // Create static JS (without Chart.js dependencies)
       await this.ensureDir(path.join(this.buildDir, 'js'));
@@ -184,14 +181,14 @@ class StaticSiteBuilder {
           );
         }
       } catch (error) {
-        console.log('⚠️  No images directory found, creating placeholder...');
+        console.log('No images directory found, creating placeholder...');
         await fs.writeFile(
           path.join(this.buildDir, 'images', '.gitkeep'),
           '# Images directory'
         );
       }
       
-      console.log('✅ Copied and processed static assets');
+      console.log('Copied and processed static assets');
       
     } catch (error) {
       throw new Error(`Failed to copy static assets: ${error.message}`);
@@ -299,10 +296,206 @@ class NavigationManager {
   }
 }
 
+class BackToTopManager {
+  constructor() {
+    this.backToTopBtn = document.getElementById('back-to-top');
+    this.scrollThreshold = 300;
+    this.init();
+  }
+
+  init() {
+    if (!this.backToTopBtn) return;
+
+    window.addEventListener('scroll', this.throttle(() => {
+      this.handleScroll();
+    }, 100));
+
+    this.backToTopBtn.addEventListener('click', () => {
+      this.scrollToTop();
+    });
+
+    this.backToTopBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.scrollToTop();
+      }
+    });
+  }
+
+  handleScroll() {
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollPosition > this.scrollThreshold) {
+      this.backToTopBtn.classList.add('show');
+      this.backToTopBtn.setAttribute('aria-hidden', 'false');
+    } else {
+      this.backToTopBtn.classList.remove('show');
+      this.backToTopBtn.setAttribute('aria-hidden', 'true');
+    }
+  }
+
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+
+    setTimeout(() => {
+      const mainContent = document.querySelector('main') || document.querySelector('#main-content');
+      if (mainContent) {
+        mainContent.focus();
+      }
+    }, 500);
+  }
+
+  throttle(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
+}
+
+class BackToTopManager {
+  constructor() {
+    this.backToTopBtn = document.getElementById('back-to-top');
+    this.scrollThreshold = 300;
+    this.init();
+  }
+
+  init() {
+    if (!this.backToTopBtn) return;
+
+    window.addEventListener('scroll', this.throttle(() => {
+      this.handleScroll();
+    }, 100));
+
+    this.backToTopBtn.addEventListener('click', () => {
+      this.scrollToTop();
+    });
+
+    this.backToTopBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.scrollToTop();
+      }
+    });
+  }
+
+  handleScroll() {
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollPosition > this.scrollThreshold) {
+      this.backToTopBtn.classList.add('show');
+      this.backToTopBtn.setAttribute('aria-hidden', 'false');
+    } else {
+      this.backToTopBtn.classList.remove('show');
+      this.backToTopBtn.setAttribute('aria-hidden', 'true');
+    }
+  }
+
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+
+    setTimeout(() => {
+      const mainContent = document.querySelector('main') || document.querySelector('#main-content');
+      if (mainContent) {
+        mainContent.focus();
+      }
+    }, 500);
+  }
+
+  throttle(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
+}
+
+class BackToTopManager {
+  constructor() {
+    this.backToTopBtn = document.getElementById('back-to-top');
+    this.scrollThreshold = 300;
+    this.init();
+  }
+
+  init() {
+    if (!this.backToTopBtn) return;
+
+    window.addEventListener('scroll', this.throttle(() => {
+      this.handleScroll();
+    }, 100));
+
+    this.backToTopBtn.addEventListener('click', () => {
+      this.scrollToTop();
+    });
+
+    this.backToTopBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.scrollToTop();
+      }
+    });
+  }
+
+  handleScroll() {
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollPosition > this.scrollThreshold) {
+      this.backToTopBtn.classList.add('show');
+      this.backToTopBtn.setAttribute('aria-hidden', 'false');
+    } else {
+      this.backToTopBtn.classList.remove('show');
+      this.backToTopBtn.setAttribute('aria-hidden', 'true');
+    }
+  }
+
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+
+    setTimeout(() => {
+      const mainContent = document.querySelector('main') || document.querySelector('#main-content');
+      if (mainContent) {
+        mainContent.focus();
+      }
+    }, 500);
+  }
+
+  throttle(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
+}
+
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
   new ThemeManager();
   new NavigationManager();
+  new BackToTopManager();
   
   // Add fade-in animation to sections
   const observer = new IntersectionObserver((entries) => {
@@ -324,7 +517,23 @@ document.addEventListener('DOMContentLoaded', () => {
 `;
 
     await fs.writeFile(path.join(this.buildDir, 'js', 'static-app.js'), staticJS);
-    console.log('✅ Created static JavaScript');
+    console.log('Created static JavaScript');
+  }
+
+  async copyToPublicFolder() {
+    try {
+      // Copy the generated index.html from build to public folder for development serving
+      const buildIndexPath = path.join(this.buildDir, 'index.html');
+      const publicIndexPath = path.join(this.publicDir, 'index.html');
+      
+      const indexContent = await fs.readFile(buildIndexPath, 'utf8');
+      await fs.writeFile(publicIndexPath, indexContent);
+      
+      console.log('Copied index.html to public folder');
+      
+    } catch (error) {
+      throw new Error(`Failed to copy to public folder: ${error.message}`);
+    }
   }
 
   async ensureDir(dirPath) {
@@ -342,7 +551,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const data = await fs.readFile(src);
       await fs.writeFile(dest, data);
     } catch (error) {
-      console.warn(`⚠️  Could not copy ${src}: ${error.message}`);
+      console.warn(`Could not copy ${src}: ${error.message}`);
     }
   }
 
@@ -357,14 +566,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Development build with source maps and unminified assets
   async buildDev() {
-    console.log('🔧 Starting development build...');
+    console.log('Starting development build...');
     await this.build();
-    console.log('🔄 Development build ready!');
+    console.log('Development build ready!');
   }
 
   // Production build with optimizations
   async buildProd() {
-    console.log('🚀 Starting production build...');
+    console.log('Starting production build...');
     await this.build();
     
     // Additional production optimizations can be added here
@@ -372,7 +581,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // - JS minification
     // - Image optimization
     
-    console.log('🌟 Production build ready!');
+    console.log('Production build ready!');
   }
 }
 

@@ -2,7 +2,7 @@
 
 A modern, professional profile website built with Node.js, featuring dynamic content loading, dark/light theme switching, and interactive time analytics charts.
 
-## 🚀 Features
+## Features
 
 - **Dynamic Content**: All content loaded from `profile.json` configuration file
 - **Theme Switching**: Professional dark/light theme toggle with smooth transitions
@@ -12,7 +12,7 @@ A modern, professional profile website built with Node.js, featuring dynamic con
 - **Performance Optimized**: Lazy loading, smooth animations, and optimized assets
 - **Professional UI**: Clean, modern design with smooth transitions and hover effects
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Backend**: Node.js + Express.js
 - **Frontend**: EJS templating, vanilla JavaScript
@@ -25,7 +25,7 @@ A modern, professional profile website built with Node.js, featuring dynamic con
 - Node.js (v14 or higher)
 - npm (comes with Node.js)
 
-## 🔧 Installation & Usage
+## Installation & Usage
 
 1. **Install dependencies:**
 ```bash
@@ -62,7 +62,7 @@ Upload these to any static hosting service like GitHub Pages, Netlify, Vercel, o
 ### Dynamic Node.js Hosting
 Use `npm start` for dynamic hosting on platforms like Heroku, Railway, or any Node.js hosting service.
 
-## 📊 Configuration
+## Configuration
 
 Edit the `profile.json` file to customize your profile information:
 
@@ -108,7 +108,7 @@ The time allocation chart provides insights into:
 - Personal project allocation
 - Work-life balance visualization
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 profile/
@@ -126,7 +126,7 @@ profile/
 └── README.md
 ```
 
-## 🚀 Deployment
+## Deployment
 
 ### Production Mode
 ```bash
@@ -137,14 +137,14 @@ npm start
 - `PORT`: Server port (default: 3000)
 - `NODE_ENV`: Environment mode (development/production)
 
-## 🎯 Key Features Implemented
+## Key Features Implemented
 
-### ✅ Node.js Conversion
+### Node.js Conversion
 - Express.js server with EJS templating
 - Dynamic content loading from JSON
 - RESTful API endpoints
 
-### ✅ Theme System
+### Theme System
 - Dark/light theme toggle
 - CSS variables for consistent theming
 - Smooth transitions and animations

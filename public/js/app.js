@@ -423,6 +423,76 @@ class AnimationManager {
   }
 }
 
+// Back to Top Button Manager
+class BackToTopManager {
+  constructor() {
+    this.backToTopBtn = document.getElementById('back-to-top');
+    this.scrollThreshold = 300;
+    this.init();
+  }
+
+  init() {
+    if (!this.backToTopBtn) return;
+
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', this.throttle(() => {
+      this.handleScroll();
+    }, 100));
+
+    // Handle click event
+    this.backToTopBtn.addEventListener('click', () => {
+      this.scrollToTop();
+    });
+
+    // Keyboard accessibility
+    this.backToTopBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.scrollToTop();
+      }
+    });
+  }
+
+  handleScroll() {
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollPosition > this.scrollThreshold) {
+      this.backToTopBtn.classList.add('show');
+      this.backToTopBtn.setAttribute('aria-hidden', 'false');
+    } else {
+      this.backToTopBtn.classList.remove('show');
+      this.backToTopBtn.setAttribute('aria-hidden', 'true');
+    }
+  }
+
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+
+    // Focus management for accessibility
+    setTimeout(() => {
+      const mainContent = document.querySelector('main') || document.querySelector('#main-content');
+      if (mainContent) {
+        mainContent.focus();
+      }
+    }, 500);
+  }
+
+  throttle(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
+}
+
 // Main Application
 class ProfileApp {
   constructor() {
@@ -432,6 +502,7 @@ class ProfileApp {
     this.performanceManager = new PerformanceManager();
     this.accessibilityManager = new AccessibilityManager();
     this.animationManager = new AnimationManager();
+    this.backToTopManager = new BackToTopManager();
     
     this.init();
   }

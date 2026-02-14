@@ -57,6 +57,6 @@ app.get('/api/profile', async (req, res) => {
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`🚀 Professional Profile Server running on http://localhost:${PORT}`);
-  console.log(`📊 Dashboard available at http://localhost:${PORT}`);
+  console.log(`Professional Profile Server running on http://localhost:${PORT}`);
+  console.log(`Dashboard available at http://localhost:${PORT}`);
 });

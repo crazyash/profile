@@ -88,9 +88,13 @@ class StaticSiteBuilder {
       
       const template = await fs.readFile(templatePath, 'utf8');
       
+      // Create a copy of profile data with build avatar path
+      const buildProfileData = JSON.parse(JSON.stringify(profileData));
+      buildProfileData.personalInfo.avatar = '/images/profile.jpg';
+      
       const html = ejs.render(template, {
-        profile: profileData,
-        title: `${profileData.personalInfo.name} - ${profileData.personalInfo.title}`,
+        profile: buildProfileData,
+        title: `${buildProfileData.personalInfo.name} - ${buildProfileData.personalInfo.title}`,
         chartSvg: await fs.readFile(path.join(this.buildDir, 'time-chart.svg'), 'utf8')
       });
       
@@ -135,9 +139,13 @@ class StaticSiteBuilder {
       
       const chartSvg = await fs.readFile(path.join(this.buildDir, 'time-chart.svg'), 'utf8');
       
+      // Create a copy of profile data with static avatar path
+      const staticProfileData = JSON.parse(JSON.stringify(profileData));
+      staticProfileData.personalInfo.avatar = './build/images/profile.jpg';
+      
       const html = ejs.render(staticTemplate, {
-        profile: profileData,
-        title: `${profileData.personalInfo.name} - ${profileData.personalInfo.title}`,
+        profile: staticProfileData,
+        title: `${staticProfileData.personalInfo.name} - ${staticProfileData.personalInfo.title}`,
         chartSvg: chartSvg
       });
       
@@ -522,14 +530,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
   async copyToPublicFolder() {
     try {
-      // Copy the generated index.html from build to public folder for development serving
-      const buildIndexPath = path.join(this.buildDir, 'index.html');
-      const publicIndexPath = path.join(this.publicDir, 'index.html');
+      // Generate development version with relative paths (like static version)
+      const templatePath = path.join(this.srcDir, 'views', 'index.ejs');
+      const template = await fs.readFile(templatePath, 'utf8');
+      const profileData = JSON.parse(await fs.readFile(path.join(this.srcDir, 'profile.json'), 'utf8'));
       
-      const indexContent = await fs.readFile(buildIndexPath, 'utf8');
-      await fs.writeFile(publicIndexPath, indexContent);
+      // Modify template to use relative paths for public folder (consistent with static)
+      const publicTemplate = template
+        .replace(/href="\/css\//g, 'href="./css/')
+        .replace(/src="\/js\//g, 'src="./js/')
+        .replace(/src="\/images\//g, 'src="./images/')
+        .replace(/href="\/images\//g, 'href="./images/')
+        .replace(/this\.src='\/images\//g, "this.src='./images/");
       
-      console.log('Copied index.html to public folder');
+      // Create profile data copy with relative avatar path
+      const publicProfileData = JSON.parse(JSON.stringify(profileData));
+      publicProfileData.personalInfo.avatar = './images/profile.jpg';
+      
+      // Render template for public folder (with Chart.js)
+      const html = ejs.render(publicTemplate, {
+        profile: publicProfileData,
+        title: `${publicProfileData.personalInfo.name} - ${publicProfileData.personalInfo.title}`,
+        // Use empty chartSvg since development uses Chart.js
+        chartSvg: ''
+      });
+      
+      await fs.writeFile(path.join(this.publicDir, 'index.html'), html);
+      
+      console.log('Generated public/index.html for development server');
       
     } catch (error) {
       throw new Error(`Failed to copy to public folder: ${error.message}`);

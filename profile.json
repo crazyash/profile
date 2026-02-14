@@ -6,7 +6,7 @@
     "phone": "8886556515",
     "location": "Hyderabad, Telangana, India",
     "website": "http://learningneverends.in/",
-    "avatar": "./build/images/profile.jpg",
+    "avatar": "/images/profile.jpg",
     "tagline": "Hybrid enterprise solutions specialist connecting on-premise systems with cloud services"
   },
   "summary": "As an Integration Specialist, I design and implement hybrid enterprise solutions that seamlessly connect on-premise systems with cloud services. My expertise lies in leveraging IBM webMethods for robust middleware orchestration, and Azure Integration Services — including API Management, Logic Apps, and Azure Functions — to deliver scalable, secure, and maintainable integration architectures.",

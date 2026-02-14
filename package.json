@@ -1,0 +1,28 @@
+{
+  "name": "professional-profile",
+  "version": "1.0.0",
+  "description": "A professional profile website with dynamic content and theme switching",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "build": "node build.js",
+    "build:dev": "node build.js dev",
+    "build:prod": "node build.js prod",
+    "deploy": "./deploy.sh",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["profile", "portfolio", "node.js", "express"],
+  "author": "Ashok Kumar Bandige",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "ejs": "^3.1.9"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

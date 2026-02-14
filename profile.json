@@ -1,0 +1,259 @@
+{
+  "personalInfo": {
+    "name": "Ashok Kumar Bandige",
+    "title": "Integration Expert | IBM webMethods | Azure - API Management | Logic Apps | Function Apps",
+    "email": "ashokkumar.bandige@gmail.com",
+    "phone": "8886556515",
+    "location": "Hyderabad, Telangana, India",
+    "website": "http://learningneverends.in/",
+    "avatar": "./build/images/profile.jpg",
+    "tagline": "Hybrid enterprise solutions specialist connecting on-premise systems with cloud services"
+  },
+  "summary": "As an Integration Specialist, I design and implement hybrid enterprise solutions that seamlessly connect on-premise systems with cloud services. My expertise lies in leveraging IBM webMethods for robust middleware orchestration, and Azure Integration Services — including API Management, Logic Apps, and Azure Functions — to deliver scalable, secure, and maintainable integration architectures.",
+  "topSkills": [
+    "Azure Logic Apps",
+    "Azure Cosmos DB", 
+    "Azure",
+    "IBM webMethods",
+    "API Management",
+    "Azure Functions"
+  ],
+  "coreSkills": [
+    "IBM webMethods Suite (Integration Server, Trading Networks, Universal Messaging)",
+    "Azure Integration Services (Logic Apps, API Management, Service Bus, Event Grid)",
+    "Azure Functions & Function Apps for serverless computing",
+    "Azure Cosmos DB and cloud database solutions",
+    "Hybrid Integration Patterns (On-premise to Cloud connectivity)",
+    "RESTful & SOAP Web Services, GraphQL APIs",
+    "Enterprise Service Bus (ESB) and Message Queue architectures",
+    "JavaScript, Java, C#, Python for integration development",
+    "API Security, OAuth 2.0, JWT, and enterprise authentication",
+    "DevOps practices with Azure DevOps and CI/CD pipelines"
+  ],
+  "certifications": [
+    {
+      "title": "Deep Dive into Retail Banking",
+      "issuer": "Professional Training Institute",
+      "year": "2023",
+      "credentialId": "RTL-BANK-2023"
+    },
+    {
+      "title": "Deep Dive into Cards & Payments",
+      "issuer": "Professional Training Institute", 
+      "year": "2023",
+      "credentialId": "CRD-PAY-2023"
+    },
+    {
+      "title": "JavaScript Certification",
+      "issuer": "Technical Certification Board",
+      "year": "2022",
+      "credentialId": "JS-CERT-2022"
+    },
+    {
+      "title": "PHP Tutorial Certification",
+      "issuer": "Web Development Institute",
+      "year": "2021",
+      "credentialId": "PHP-TUT-2021"
+    }
+  ],
+  "awards": [
+    {
+      "title": "Integration Excellence Award",
+      "issuer": "Colruyt Group India",
+      "year": "2025",
+      "description": "For outstanding performance in hybrid cloud integrations"
+    },
+    {
+      "title": "Technical Innovation Award",
+      "issuer": "ITC Infotech",
+      "year": "2019",
+      "description": "For innovative Azure Logic Apps implementation"
+    }
+  ],
+  "experience": [
+    {
+      "position": "Principal Software Consultant",
+      "company": "Colruyt Group India",
+      "duration": "April 2025 - Present",
+      "location": "Hyderabad, Telangana, India",
+      "description": "As an Integration Expert, I design and implement hybrid enterprise solutions that seamlessly connect on-premise systems with cloud services. My expertise lies in leveraging IBM webMethods for robust middleware orchestration, and Azure Integration Services — including API Management, Logic Apps, and Azure Functions — to deliver scalable, secure, and maintainable integration architectures.",
+      "achievements": [
+        "Architected hybrid integration solutions connecting legacy systems with Azure cloud services",
+        "Led implementation of Azure Logic Apps for business process automation",
+        "Designed API Management strategies for enterprise-grade security and scalability"
+      ]
+    },
+    {
+      "position": "Lead Software Consultant",
+      "company": "Colruyt Group India", 
+      "duration": "April 2023 - March 2025",
+      "location": "Hyderabad, Telangana, India",
+      "description": "Led integration projects focusing on Azure services and webMethods platform integration.",
+      "achievements": [
+        "Implemented Azure Functions for serverless integration workflows",
+        "Migrated legacy integrations to cloud-native Azure solutions", 
+        "Achieved 40% reduction in integration development time through reusable components"
+      ]
+    },
+    {
+      "position": "Associate Technical Consultant",
+      "company": "Colruyt Group India",
+      "duration": "December 2019 - March 2023", 
+      "location": "Hyderabad, Telangana, India",
+      "description": "Developed and maintained integration solutions using webMethods and Azure services.",
+      "achievements": [
+        "Built robust API integrations using Azure API Management",
+        "Implemented message queuing solutions with Azure Service Bus",
+        "Delivered 25+ successful integration projects with 99.5% uptime"
+      ]
+    },
+    {
+      "position": "Consultant",
+      "company": "ITC Infotech",
+      "duration": "July 2018 - November 2019",
+      "location": "Hyderabad, Telangana, India", 
+      "description": "Integration consultant specializing in enterprise middleware solutions.",
+      "achievements": [
+        "Implemented complex B2B integrations using webMethods Trading Networks",
+        "Developed custom adapters for legacy system connectivity",
+        "Optimized integration performance by 35% through code refactoring"
+      ]
+    },
+    {
+      "position": "Associate",
+      "company": "Cognizant",
+      "duration": "December 2015 - July 2018",
+      "location": "India",
+      "description": "Integration developer working on banking and financial services projects.",
+      "achievements": [
+        "Developed real-time payment processing integrations",
+        "Implemented security frameworks for financial data exchange",
+        "Contributed to team knowledge sharing and best practices"
+      ]
+    },
+    {
+      "position": "Consultant", 
+      "company": "HCL Technologies",
+      "duration": "February 2015 - December 2015",
+      "location": "India",
+      "description": "Short-term consulting engagement for integration platform optimization.",
+      "achievements": [
+        "Optimized existing webMethods integrations for better performance",
+        "Implemented monitoring and alerting solutions"
+      ]
+    },
+    {
+      "position": "Senior System Engineer",
+      "company": "Infosys",
+      "duration": "July 2011 - February 2015",
+      "location": "India", 
+      "description": "Started career in enterprise integration, learning webMethods fundamentals.",
+      "achievements": [
+        "Completed comprehensive webMethods training with distinction",
+        "Developed foundational integration solutions for enterprise clients",
+        "Received recognition for exceptional learning and performance"
+      ]
+    }
+  ],
+  "publicProfiles": [
+    {
+      "platform": "LinkedIn",
+      "url": "https://www.linkedin.com/in/ashokkumarbandige",
+      "icon": "fab fa-linkedin"
+    },
+    {
+      "platform": "GitHub", 
+      "url": "https://github.com/crazyash",
+      "icon": "fab fa-github"
+    },
+    {
+      "platform": "Personal Blog",
+      "url": "http://learningneverends.in/",
+      "icon": "fas fa-blog"
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor's degree, Electronics and Communications Engineering",
+      "institution": "Sreenidhi Institute of Science and Technology",
+      "year": "2007 - 2011",
+      "grade": "First Class",
+      "location": "Hyderabad, India"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Hybrid Cloud Integration Platform",
+      "description": "Designed and implemented comprehensive integration platform connecting on-premise webMethods with Azure cloud services",
+      "technologies": ["IBM webMethods", "Azure Logic Apps", "API Management", "Azure Functions"],
+      "year": "2025",
+      "impact": "Enabled seamless hybrid connectivity with 99.9% uptime and 50% cost reduction"
+    },
+    {
+      "name": "Azure-Native Integration Suite",
+      "description": "Built end-to-end integration solution using Azure services for retail client", 
+      "technologies": ["Azure Logic Apps", "Azure Cosmos DB", "Service Bus", "API Management"],
+      "year": "2024",
+      "impact": "Processed 2M+ transactions daily with automatic scaling and monitoring"
+    },
+    {
+      "name": "Legacy System Modernization",
+      "description": "Migrated legacy integrations to cloud-native Azure architecture",
+      "technologies": ["webMethods", "Azure Functions", "Event Grid", "Cosmos DB"],
+      "year": "2023", 
+      "impact": "Reduced maintenance costs by 60% and improved system reliability"
+    }
+  ],
+  "timeActivities": [
+    {
+      "activity": "Integration Development",
+      "hours": 6,
+      "color": "#3498db",
+      "description": "Azure and webMethods integration development and architecture"
+    },
+    {
+      "activity": "Learning Azure Services",
+      "hours": 1.5,
+      "color": "#e74c3c", 
+      "description": "Staying current with latest Azure integration services and features"
+    },
+    {
+      "activity": "Technical Documentation",
+      "hours": 1,
+      "color": "#f39c12",
+      "description": "Creating integration guides and best practices documentation"
+    },
+    {
+      "activity": "Team Mentoring",
+      "hours": 1,
+      "color": "#9b59b6",
+      "description": "Mentoring junior developers on integration technologies"
+    },
+    {
+      "activity": "POC & Innovation",
+      "hours": 1,
+      "color": "#2ecc71", 
+      "description": "Proof of concepts with emerging integration technologies"
+    },
+    {
+      "activity": "Client Consultation",
+      "hours": 1.5,
+      "color": "#1abc9c",
+      "description": "Consulting with clients on integration strategy and architecture"
+    },
+    {
+      "activity": "Personal & Family Time",
+      "hours": 12,
+      "color": "#34495e",
+      "description": "Work-life balance, family time, and personal activities"
+    }
+  ],
+  "technicalExpertise": {
+    "integrationPlatforms": ["IBM webMethods", "Azure Logic Apps", "Azure API Management", "Azure Service Bus"],
+    "cloudServices": ["Azure Functions", "Azure Cosmos DB", "Azure Event Grid", "Azure Storage"], 
+    "programmingLanguages": ["JavaScript", "Java", "C#", "Python", "PHP"],
+    "databases": ["Azure Cosmos DB", "SQL Server", "MySQL", "PostgreSQL"],
+    "apiTechnologies": ["REST", "SOAP", "GraphQL", "OData", "JSON", "XML"],
+    "devopsTools": ["Azure DevOps", "Git", "Jenkins", "Docker", "Kubernetes"]
+  }
+}

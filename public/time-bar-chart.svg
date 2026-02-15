@@ -1,0 +1,149 @@
+
+      <svg width="600" height="300" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Grid lines -->
+        
+            <line x1="50" y1="50" x2="550" y2="50" stroke="var(--border-color)" stroke-width="1" opacity="0.3"/>
+            <text x="40" y="54" text-anchor="end" font-size="10" fill="var(--text-secondary)">12h</text>
+          
+
+            <line x1="50" y1="90" x2="550" y2="90" stroke="var(--border-color)" stroke-width="1" opacity="0.3"/>
+            <text x="40" y="94" text-anchor="end" font-size="10" fill="var(--text-secondary)">10h</text>
+          
+
+            <line x1="50" y1="130" x2="550" y2="130" stroke="var(--border-color)" stroke-width="1" opacity="0.3"/>
+            <text x="40" y="134" text-anchor="end" font-size="10" fill="var(--text-secondary)">7h</text>
+          
+
+            <line x1="50" y1="170" x2="550" y2="170" stroke="var(--border-color)" stroke-width="1" opacity="0.3"/>
+            <text x="40" y="174" text-anchor="end" font-size="10" fill="var(--text-secondary)">5h</text>
+          
+
+            <line x1="50" y1="210" x2="550" y2="210" stroke="var(--border-color)" stroke-width="1" opacity="0.3"/>
+            <text x="40" y="214" text-anchor="end" font-size="10" fill="var(--text-secondary)">2h</text>
+          
+
+            <line x1="50" y1="250" x2="550" y2="250" stroke="var(--border-color)" stroke-width="1" opacity="0.3"/>
+            <text x="40" y="254" text-anchor="end" font-size="10" fill="var(--text-secondary)">0h</text>
+          
+        
+        <!-- Bars -->
+        
+        <rect x="50" y="150" width="61.42857142857143" height="100" 
+              fill="#3498db" opacity="0.8" rx="4">
+          <title>Integration Development: 6h</title>
+        </rect>
+        <text x="80.71428571428572" y="270" 
+              text-anchor="middle" font-size="10" fill="var(--text-secondary)" 
+              transform="rotate(-45, 80.71428571428572, 270)">
+          Integration Development
+        </text>
+        <text x="80.71428571428572" y="145" 
+              text-anchor="middle" font-size="12" font-weight="bold" fill="var(--text-primary)">
+          6h
+        </text>
+      
+
+        <rect x="131.42857142857144" y="225" width="61.42857142857143" height="25" 
+              fill="#e74c3c" opacity="0.8" rx="4">
+          <title>Learning Azure Services: 1.5h</title>
+        </rect>
+        <text x="162.14285714285717" y="270" 
+              text-anchor="middle" font-size="10" fill="var(--text-secondary)" 
+              transform="rotate(-45, 162.14285714285717, 270)">
+          Learning Azure
+        </text>
+        <text x="162.14285714285717" y="220" 
+              text-anchor="middle" font-size="12" font-weight="bold" fill="var(--text-primary)">
+          1.5h
+        </text>
+      
+
+        <rect x="212.85714285714286" y="233.33333333333334" width="61.42857142857143" height="16.666666666666664" 
+              fill="#f39c12" opacity="0.8" rx="4">
+          <title>Technical Documentation: 1h</title>
+        </rect>
+        <text x="243.57142857142858" y="270" 
+              text-anchor="middle" font-size="10" fill="var(--text-secondary)" 
+              transform="rotate(-45, 243.57142857142858, 270)">
+          Technical Documentation
+        </text>
+        <text x="243.57142857142858" y="228.33333333333334" 
+              text-anchor="middle" font-size="12" font-weight="bold" fill="var(--text-primary)">
+          1h
+        </text>
+      
+
+        <rect x="294.2857142857143" y="233.33333333333334" width="61.42857142857143" height="16.666666666666664" 
+              fill="#9b59b6" opacity="0.8" rx="4">
+          <title>Team Mentoring: 1h</title>
+        </rect>
+        <text x="325" y="270" 
+              text-anchor="middle" font-size="10" fill="var(--text-secondary)" 
+              transform="rotate(-45, 325, 270)">
+          Team Mentoring
+        </text>
+        <text x="325" y="228.33333333333334" 
+              text-anchor="middle" font-size="12" font-weight="bold" fill="var(--text-primary)">
+          1h
+        </text>
+      
+
+        <rect x="375.7142857142857" y="233.33333333333334" width="61.42857142857143" height="16.666666666666664" 
+              fill="#2ecc71" opacity="0.8" rx="4">
+          <title>POC & Innovation: 1h</title>
+        </rect>
+        <text x="406.42857142857144" y="270" 
+              text-anchor="middle" font-size="10" fill="var(--text-secondary)" 
+              transform="rotate(-45, 406.42857142857144, 270)">
+          POC &
+        </text>
+        <text x="406.42857142857144" y="228.33333333333334" 
+              text-anchor="middle" font-size="12" font-weight="bold" fill="var(--text-primary)">
+          1h
+        </text>
+      
+
+        <rect x="457.14285714285717" y="225" width="61.42857142857143" height="25" 
+              fill="#1abc9c" opacity="0.8" rx="4">
+          <title>Client Consultation: 1.5h</title>
+        </rect>
+        <text x="487.8571428571429" y="270" 
+              text-anchor="middle" font-size="10" fill="var(--text-secondary)" 
+              transform="rotate(-45, 487.8571428571429, 270)">
+          Client Consultation
+        </text>
+        <text x="487.8571428571429" y="220" 
+              text-anchor="middle" font-size="12" font-weight="bold" fill="var(--text-primary)">
+          1.5h
+        </text>
+      
+
+        <rect x="538.5714285714286" y="50" width="61.42857142857143" height="200" 
+              fill="#34495e" opacity="0.8" rx="4">
+          <title>Personal & Family Time: 12h</title>
+        </rect>
+        <text x="569.2857142857142" y="270" 
+              text-anchor="middle" font-size="10" fill="var(--text-secondary)" 
+              transform="rotate(-45, 569.2857142857142, 270)">
+          Personal &
+        </text>
+        <text x="569.2857142857142" y="45" 
+              text-anchor="middle" font-size="12" font-weight="bold" fill="var(--text-primary)">
+          12h
+        </text>
+      
+        
+        <!-- Axis lines -->
+        <line x1="50" y1="50" x2="50" y2="250" stroke="var(--text-secondary)" stroke-width="2"/>
+        <line x1="50" y1="250" x2="550" y2="250" stroke="var(--text-secondary)" stroke-width="2"/>
+        
+        <style>
+          rect:hover {
+            opacity: 1;
+            transform: scaleY(1.05);
+            transform-origin: bottom;
+            transition: all 0.3s ease;
+          }
+        </style>
+      </svg>
+    

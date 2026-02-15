@@ -15,7 +15,7 @@ body {
 
 /* Header Styles */
 .header {
-  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+  background: linear-gradient(135deg, #1e40af 0%, #1c6def 100%);
   color: white;
   padding: 60px 0;
 }
@@ -128,7 +128,7 @@ body {
 .nav-links li a:hover,
 .nav-links li a.active {
   background: rgba(255, 255, 255, 0.1);
-  border-bottom-color: #3b82f6;
+  border-bottom-color: #1c6def;
 }
 
 /* Main Content */
@@ -153,7 +153,7 @@ body {
 .section-header h3 {
   margin: 0;
   font-size: 1.8rem;
-  color: #1e40af;
+  color: #1c6def;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -173,7 +173,7 @@ body {
   padding: 15px;
   background: #f8fafc;
   border-radius: 8px;
-  border-left: 4px solid #3b82f6;
+  border-left: 4px solid #1c6def;
 }
 
 .skill-item i {
@@ -188,7 +188,7 @@ body {
   right: 30px;
   width: 50px;
   height: 50px;
-  background: #3b82f6;
+  background: #1c6def;
   color: white;
   border: none;
   border-radius: 50%;
@@ -224,6 +224,7 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-size: 1.4rem;
 }
 
 .theme-btn:hover {
@@ -260,7 +261,7 @@ body {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: #3b82f6;
+  background: #1c6def;
   border: 3px solid white;
   box-shadow: 0 0 0 3px #e2e8f0;
 }
@@ -278,7 +279,7 @@ body {
 
 .timeline-content h4 {
   margin: 0 0 5px 0;
-  color: #1e40af;
+  color: #1c6def;
   font-size: 1.3rem;
 }
 
@@ -329,12 +330,12 @@ body {
 
 .project-header h4 {
   margin: 0;
-  color: #1e40af;
+  color: #1c6def;
   font-size: 1.3rem;
 }
 
 .project-year {
-  background: #3b82f6;
+  background: #1c6def;
   color: white;
   padding: 4px 12px;
   border-radius: 20px;
@@ -366,7 +367,7 @@ body {
 }
 
 .cert-category h4 {
-  color: #1e40af;
+  color: #1c6def;
   margin-bottom: 20px;
   font-size: 1.3rem;
 }
@@ -411,7 +412,7 @@ body {
 }
 
 .profile-card:hover {
-  background: #3b82f6;
+  background: #1c6def;
   color: white;
   transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
@@ -436,13 +437,13 @@ body {
   padding: 25px;
   background: #f8fafc;
   border-radius: 12px;
-  border-left: 4px solid #3b82f6;
+  border-left: 4px solid #1c6def;
 }
 
 .edu-degree {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #1e40af;
+  color: #1c6def;
   margin-bottom: 8px;
 }
 
@@ -495,7 +496,7 @@ body {
 }
 
 .activity-stats h4 {
-  color: #1e40af;
+  color: #1c6def;
   margin-bottom: 20px;
   font-size: 1.3rem;
 }
@@ -562,7 +563,7 @@ body {
 }
 
 .footer-links a:hover {
-  color: #3b82f6;
+  color: #1c6def;
 }
 
 /* Dark Theme */
@@ -573,6 +574,51 @@ body {
 
 .dark-theme .section {
   background: #374151;
+  color: #f9fafb;
+}
+
+.dark-theme .section-header h3 {
+  color: #1c6def;
+}
+
+.dark-theme .timeline-content h4 {
+  color: #1c6def;
+}
+
+.dark-theme .timeline-content h5 {
+  color: #d1d5db;
+}
+
+.dark-theme .project-header h4 {
+  color: #1c6def;
+}
+
+.dark-theme .cert-title {
+  color: #f3f4f6;
+}
+
+.dark-theme .cert-issuer {
+  color: #d1d5db;
+}
+
+.dark-theme .edu-degree {
+  color: #1c6def;
+}
+
+.dark-theme .edu-institution {
+  color: #d1d5db;
+}
+
+.dark-theme .activity-stats h4 {
+  color: #1c6def;
+}
+
+.dark-theme .stat-name {
+  color: #f3f4f6;
+}
+
+.dark-theme .stat-value {
+  color: #d1d5db;
 }
 
 .dark-theme .skill-item,
@@ -582,6 +628,66 @@ body {
 .dark-theme .education-item,
 .dark-theme .stat-item {
   background: #4b5563;
+  color: #f9fafb;
+}
+
+.dark-theme .profile-card {
+  color: #f3f4f6;
+  border-color: #6b7280;
+}
+
+.dark-theme .profile-card:hover {
+  color: white;
+}
+
+.dark-theme .footer {
+  background: #111827;
+}
+
+.dark-theme .navbar {
+  background: #111827;
+}
+
+/* Dark theme chart text colors */
+.dark-theme .chart-title {
+  fill: #f3f4f6 !important;
+}
+
+.dark-theme .chart-legend {
+  fill: #d1d5db !important;
+}
+
+/* Additional dark theme text fixes */
+.dark-theme h1, .dark-theme h2, .dark-theme h3, .dark-theme h4, .dark-theme h5 {
+  color: #f9fafb;
+}
+
+.dark-theme p {
+  color: #e5e7eb;
+}
+
+.dark-theme .tagline {
+  color: #d1d5db;
+}
+
+.dark-theme .contact-info span {
+  color: #e5e7eb;
+}
+
+.dark-theme .contact-info a {
+  color: #1c6def;
+}
+
+.dark-theme .location {
+  color: #9ca3af;
+}
+
+.dark-theme .duration {
+  color: #34d399;
+}
+
+.dark-theme .project-description {
+  color: #d1d5db;
 }
 
 /* Responsive */

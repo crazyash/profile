@@ -20,7 +20,7 @@ A modern, professional profile website built as a static site featuring clean de
 - **Icons**: Font Awesome for professional iconography
 - **Hosting**: Any static hosting service
 
-## 📋 Quick Setup
+##  Quick Setup
 
 This is a static website - no build process required! Just open `index.html` in a browser or host the files on any web server.
 
@@ -35,7 +35,7 @@ npx serve .
 # Option 3: Just open index.html in your browser
 ```
 
-## 🔄 Updating Your Profile
+##  Updating Your Profile
 
 When you modify `profile.json` with your information:
 
@@ -62,7 +62,7 @@ npm install
 npm run build
 ```
 
-## 🎨 Customization Guide
+##  Customization Guide
 
 ### Profile Information
 Edit these sections in `public/index.html`:
@@ -91,7 +91,7 @@ Modify `public/css/style.css`:
 - **Chart Styling**: Customize SVG chart appearance
 - **Responsive Breakpoints**: Modify for different screen sizes
 
-## 📁 File Structure
+##  File Structure
 
 ```
 profile/
@@ -108,7 +108,7 @@ profile/
 └── README.md
 ```
 
-## 🚀 Deployment
+##  Deployment
 
 ### Static Hosting (Recommended)
 Upload files to any static hosting service:
@@ -122,33 +122,33 @@ Upload files to any static hosting service:
 - **`public/index.html`**: Use for hosting just the public folder
 - **`index.html`**: Use for hosting from root directory
 
-## ✨ Features Implemented
+##  Features Implemented
 
 ### Professional Design
-- ✅ Clean, modern interface with professional color schemes
-- ✅ Responsive grid layouts for all screen sizes
-- ✅ Interactive hover effects and smooth transitions
-- ✅ Professional LinkedIn integration with transparency effects
+-  Clean, modern interface with professional color schemes
+-  Responsive grid layouts for all screen sizes
+-  Interactive hover effects and smooth transitions
+-  Professional LinkedIn integration with transparency effects
 
 ### Theme System
-- ✅ Dark/light theme toggle with smooth transitions
-- ✅ CSS variables for consistent theming
-- ✅ System preference detection and localStorage persistence
-- ✅ Theme-aware chart and component colors
+-  Dark/light theme toggle with smooth transitions
+-  CSS variables for consistent theming
+-  System preference detection and localStorage persistence
+-  Theme-aware chart and component colors
 
 ### Time Analytics
-- ✅ Clean SVG-based pie chart (removed text clutter)
-- ✅ Professional activity breakdown visualization
-- ✅ Responsive chart design with hover effects
-- ✅ Activity stats sidebar for detailed information
+-  Clean SVG-based pie chart (removed text clutter)
+-  Professional activity breakdown visualization
+-  Responsive chart design with hover effects
+-  Activity stats sidebar for detailed information
 
 ### User Experience
-- ✅ Back-to-top button with smooth scrolling
-- ✅ Keyboard navigation support
-- ✅ Screen reader compatibility
-- ✅ Fast loading with no external dependencies
+-  Back-to-top button with smooth scrolling
+-  Keyboard navigation support
+-  Screen reader compatibility
+-  Fast loading with no external dependencies
 
-## � Advanced Customization
+##  Advanced Customization
 
 ### Adding New Sections
 1. Add HTML structure in `public/index.html`
@@ -170,7 +170,7 @@ Upload files to any static hosting service:
 - **Icons**: Use Font Awesome classes for consistent iconography
 - **Images**: Optimize images for web (WebP format recommended)
 
-## 🤝 Contributing
+##  Contributing
 
 This is a personal profile template. Feel free to:
 1. Fork for your own use
@@ -178,13 +178,13 @@ This is a personal profile template. Feel free to:
 3. Share improvements via pull requests
 4. Report issues or suggestions
 
-## 📄 License
+##  License
 
 MIT License - Use freely for your professional profile!
 
 ---
 
-**Professional static profile ready for deployment** ⚡
+**Professional static profile ready for deployment** 
 - No build process required
 - Works on any hosting platform  
 - Professional LinkedIn integration

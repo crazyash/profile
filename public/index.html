@@ -298,47 +298,7 @@
         <div class="section-content">
           <div class="analytics-grid">
             <div class="chart-container">
-              <!-- Static SVG Chart -->
-              <svg width="350" height="300" viewBox="0 0 350 300" xmlns="http://www.w3.org/2000/svg">
-                <style>
-                  .chart-slice { transition: transform 0.2s ease; cursor: pointer; }
-                  .chart-slice:hover { transform: scale(1.05); transform-origin: center; }
-                  .chart-text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 12px; font-weight: 500; }
-                  .chart-title { font-size: 16px; font-weight: 600; text-anchor: middle; }
-                  .chart-legend { font-size: 11px; }
-                </style>
-                
-                <!-- Background circle -->
-                <circle cx="175" cy="155" r="110" fill="none" stroke="#e2e8f0" stroke-width="2" opacity="0.1"/>
-                
-                <!-- Chart title -->
-                <text x="175" y="20" class="chart-title chart-text" fill="#2d3748">Daily Time Allocation</text>
-                
-                <!-- Chart slices -->
-                <g transform="translate(175,155)">
-                  <path d="M 0,-110 A 110,110 0 1,1 -106.9,-17 L 0,0 Z" fill="#3498db" class="chart-slice">
-                    <title>Integration Development: 6h/day</title>
-                  </path>
-                  <path d="M -106.9,-17 A 110,110 0 0,1 -33.9,-103.7 L 0,0 Z" fill="#e74c3c" class="chart-slice">
-                    <title>Learning Azure Services: 1.5h/day</title>
-                  </path>
-                  <path d="M -33.9,-103.7 A 110,110 0 0,1 16.5,-108.7 L 0,0 Z" fill="#f39c12" class="chart-slice">
-                    <title>Technical Documentation: 1h/day</title>
-                  </path>
-                  <path d="M 16.5,-108.7 A 110,110 0 0,1 39.4,-102.8 L 0,0 Z" fill="#9b59b6" class="chart-slice">
-                    <title>Team Mentoring: 1h/day</title>
-                  </path>
-                  <path d="M 39.4,-102.8 A 110,110 0 0,1 68.7,-85 L 0,0 Z" fill="#2ecc71" class="chart-slice">
-                    <title>POC & Innovation: 1h/day</title>
-                  </path>
-                  <path d="M 68.7,-85 A 110,110 0 0,1 106.9,17 L 0,0 Z" fill="#1abc9c" class="chart-slice">
-                    <title>Client Consultation: 1.5h/day</title>
-                  </path>
-                  <path d="M 106.9,17 A 110,110 0 1,1 0,-110 L 0,0 Z" fill="#34495e" class="chart-slice">
-                    <title>Personal & Family Time: 12h/day</title>
-                  </path>
-                </g>
-              </svg>
+              <canvas id="timeChart"></canvas>
             </div>
             <div class="activity-stats">
               <h4>Daily Time Distribution</h4>

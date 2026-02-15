@@ -4,13 +4,8 @@
   "description": "A professional profile website with dynamic content and theme switching",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js",
-    "build": "node build.js",
-    "build:dev": "node build.js dev",
-    "build:prod": "node build.js prod",
-    "deploy": "./deploy.sh",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sync": "node sync.js",
+    "test": "echo \"Static site ready! Open public/index.html or index.html in browser.\""
   },
   "keywords": ["profile", "portfolio", "node.js", "express"],
   "author": "Ashok Kumar Bandige",

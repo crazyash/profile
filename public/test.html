@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS/JS Test</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .test-indicator {
+      background: red;
+      color: white;
+      padding: 10px;
+      margin: 20px;
+      border-radius: 5px;
+    }
+    .css-loaded .test-indicator {
+      background: green;
+    }
+  </style>
+</head>
+<body class="light-theme css-loaded">
+  <div class="container">
+    <h1>CSS/JS Loading Test</h1>
+    <div class="test-indicator">
+      If this is GREEN, CSS is loading. If RED, CSS failed to load.
+    </div>
+    
+    <button id="test-btn">Click to Test JavaScript</button>
+    <div id="js-result">JavaScript not loaded yet...</div>
+    
+    <div class="section">
+      <h3>Sample Section</h3>
+      <p>This should have section styling if CSS is working.</p>
+    </div>
+  </div>
+  
+  <script>
+    console.log('Inline script loaded');
+    document.getElementById('test-btn').addEventListener('click', function() {
+      document.getElementById('js-result').innerHTML = 'JavaScript is working!';
+      document.getElementById('js-result').style.color = 'green';
+    });
+  </script>
+  <script src="./js/static-app.js"></script>
+</body>
+</html>
